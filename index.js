@@ -8,7 +8,7 @@ const {
 	StringSelectMenuBuilder,
 } = require("discord.js");
 
-const { token } = require("./config.json");
+const { token, id_registro, rol_sin_verificacion } = require("./config.json");
 
 const client = new Client({
 	intents: [
@@ -19,8 +19,8 @@ const client = new Client({
 	partials: [Partials.Message, Partials.Channel, Partials.Reaction],
 });
 
-const ID_CANAL_REGISTRO = "1362947408526573588";
-const ROL_SIN_VERIFICACION = "1362947750873792715";
+const ID_CANAL_REGISTRO = id_registro;
+const ROL_SIN_VERIFICACION = rol_sin_verificacion;
 
 const PROFESORES = {
 	miller: {
