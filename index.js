@@ -8,7 +8,11 @@ const {
 	StringSelectMenuBuilder,
 } = require("discord.js");
 
-const { token, id_registro, rol_sin_verificacion } = require("./config.json");
+require("dotenv").config();
+
+const token = process.env.TOKEN;
+const id_registro = process.env.ID_REGISTRO;
+const rol_sin_verificacion = process.env.ROL_SIN_VERIFICACION;
 
 const client = new Client({
 	intents: [
@@ -18,9 +22,6 @@ const client = new Client({
 	],
 	partials: [Partials.Message, Partials.Channel, Partials.Reaction],
 });
-
-const ID_CANAL_REGISTRO = id_registro;
-const ROL_SIN_VERIFICACION = rol_sin_verificacion;
 
 const PROFESORES = {
 	miller: {
@@ -136,7 +137,7 @@ client.once("ready", () => {
 });
 
 client.on("guildMemberAdd", async (member) => {
-	const canalRegistro = member.guild.channels.cache.get(ID_CANAL_REGISTRO);
+	const canalRegistro = member.guild.channels.cache.get(id_registro);
 	if (!canalRegistro) return;
 
 	const row = new ActionRowBuilder().addComponents(
@@ -147,7 +148,7 @@ client.on("guildMemberAdd", async (member) => {
 	);
 
 	try {
-		await member.roles.add(ROL_SIN_VERIFICACION);
+		await member.roles.add(rol_sin_verificacion);
 		console.log(`✅ Rol "Sin Verificación" asignado a ${member.user.tag}`);
 	} catch (error) {
 		console.error("❌ Error al asignar rol:", error);
@@ -313,7 +314,7 @@ client.on("interactionCreate", async (interaction) => {
 
 	// Interacción para finalizar el registro
 	if (interaction.isButton() && interaction.customId === "finalizar_registro") {
-		await interaction.member.roles.remove(ROL_SIN_VERIFICACION).catch(() => {});
+		await interaction.member.roles.remove(rol_sin_verificacion).catch(() => {});
 
 		await interaction.update({
 			content:
