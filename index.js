@@ -68,6 +68,7 @@ const PROFESORES = {
 			python: {
 				nombre: "Python",
 				dias: {
+					martes: ["6:30pm"],
 					sabado: ["9:00am"],
 					miercoles: ["6:30pm"],
 				},
