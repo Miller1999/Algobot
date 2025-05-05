@@ -31,18 +31,26 @@ const PROFESORES = {
 				nombre: "Roblox",
 				dias: {
 					martes: ["6:30pm"],
+					jueves: ["5:00pm"],
 				},
 			},
 			unity: {
 				nombre: "Unity",
 				dias: {
-					miercoles: ["5:00pm"],
+					miercoles: ["5:00pm", "6:30pm"],
+					viernes: ["6:30pm"],
 				},
 			},
 			python: {
 				nombre: "Python",
 				dias: {
 					jueves: ["6:30pm"],
+				},
+			},
+			scratch: {
+				nombre: "Programacion visual",
+				dias: {
+					sabado: ["8:30am", "10:00am"],
 				},
 			},
 		},
@@ -63,14 +71,16 @@ const PROFESORES = {
 				nombre: "Roblox",
 				dias: {
 					martes: ["5:00pm"],
+					viernes: ["6:30pm"],
 				},
 			},
 			python: {
 				nombre: "Python",
 				dias: {
+					lunes: ["4:30pm"],
 					martes: ["6:30pm"],
-					sabado: ["9:00am"],
 					miercoles: ["6:30pm"],
+					sabado: ["9:00am"],
 				},
 			},
 		},
@@ -83,6 +93,7 @@ const PROFESORES = {
 				dias: {
 					lunes: ["Intensivo"],
 					martes: ["Intensivo"],
+					viernes: ["6:00pm"],
 				},
 			},
 			roblox: {
@@ -98,6 +109,13 @@ const PROFESORES = {
 					jueves: ["6:30pm"],
 				},
 			},
+			scratch: {
+				nombre: "Programacion visual",
+				dias: {
+					martes: ["5:00pm"],
+					jueves: ["5:00pm"],
+				},
+			},
 		},
 	},
 	miguel: {
@@ -107,26 +125,22 @@ const PROFESORES = {
 				nombre: "Unity",
 				dias: {
 					viernes: ["5:00pm"],
+					sabado: ["10:30am"],
 				},
 			},
 			roblox: {
 				nombre: "Roblox",
 				dias: {
+					lunes: ["5:00pm"],
 					martes: ["5:00pm"],
-					miercoles: ["5:00pm", "6:30pm"],
+					miercoles: ["6:30pm"],
 					jueves: ["5:00pm"],
-					viernes: ["6:30pm"],
 				},
 			},
-		},
-	},
-	hafid: {
-		nombre: "Hafid",
-		materias: {
-			unity: {
-				nombre: "Unity",
+			scratch: {
+				nombre: "Programacion visual",
 				dias: {
-					viernes: ["6:30pm"],
+					sabado: ["10:30am"],
 				},
 			},
 		},
